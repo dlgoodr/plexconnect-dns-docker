@@ -12,4 +12,4 @@ for host in "${hosttointercept_array[@]}"; do
     echo "address=/${host}/${ip_pms}" >> /etc/dnsmasq/01-plexconnect.conf
 done
 
-dnsmasq -d
+dnsmasq
