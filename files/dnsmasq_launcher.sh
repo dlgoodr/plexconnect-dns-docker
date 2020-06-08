@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+env
+
 IFS=" "
 
 read -a ip_dnsmaster_array <<< "$ip_dnsmaster"
@@ -12,4 +14,5 @@ for host in "${hosttointercept_array[@]}"; do
     echo "address=/${host}/${ip_pms}" >> /etc/dnsmasq/01-plexconnect.conf
 done
 
-dnsmasq
+dnsmasq --test
+dnsmasq -d -q
